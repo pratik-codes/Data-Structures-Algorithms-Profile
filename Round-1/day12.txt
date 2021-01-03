@@ -1,0 +1,26 @@
+# max subset sum where subbset is not a Adjacent numbers
+# time O(nd) | space O(n)
+
+
+def numberOfWaysToMakeChange(n, denoms):
+	ways = [0 for amount in range(n+1)]
+	way[0] = 1
+	for denom in denoms:
+		for amount in range(1, n+1):
+			if denoms <= amount:
+				ways[amount] += ways[amount - denoms]
+
+	return ways[n]
+
+#minimum number of coins for change 
+# find the miniumum number of coins needed fro the denom array in order to be the amount mentioned 
+# space O(n) time O(nd)
+
+def minNuberofDenoms(n, denoms):
+	nums = [float("inf") for amounts of range(n+1)]
+	nums[0] = 0
+	for denom in denoms:
+		for amount in range(len(numofCoins)):
+			if denom <= amount:
+				numofCoins[amount] = min(numofCoins[amount], 1 + numofCoins[amount - denom])
+	return numOfCoins[n]

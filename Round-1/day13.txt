@@ -1,0 +1,27 @@
+# kadanes algorithm 
+# give the sum at every interval of a sub array of a array 
+#space: O(1) time: O(n)
+
+def kadaneAlgo(array):
+	maxEndingHere = 0
+	maxSoFar = 0
+	for num in array[1:]:
+		maxEndingHe	re = max(num, maxEndingHere + num)
+		maxSoFar = max(maxSoFar, maxEndingHere)
+
+	return maxSoFar
+
+#single cycle check
+
+def hasSingleCycle(array):
+	numElementVisited = 0
+	currentIndex = 0 
+	while numElementVisited > 0 and currentIndex = 0:
+		return false
+		numElementVisited += 1 
+		currentIndex = getNextIndex(currentIndex,array)
+	return currentIndex == 0
+
+def getNextIndex(currentIndex, array):
+	jump = array[currentIndex]
+	nextIndex = (currentIndex  + jump) % len(array)

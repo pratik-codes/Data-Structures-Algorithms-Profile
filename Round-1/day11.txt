@@ -1,0 +1,54 @@
+#traversing A BST 
+# time: O(n) | space: O(n)
+def inOrderTraverse(tree, array):
+	if tree is not none:
+		inOrderTraverse(tree.left, array)
+		array.append(tree.value)
+		inOrderTraverse(tree.right,array)
+	return array
+
+def preOrderTraverse(tree, array):
+	if tree is not none:
+		array.append(tree.value)
+		inOrderTraverse(tree.left, array)
+		inOrderTraverse(tree.right,array)
+	return array
+
+def postOrderTraverse(tree, array):
+	if tree is not none:
+		inOrderTraverse(tree.left, array)
+		inOrderTraverse(tree.right,array)
+		array.append(tree.value)
+	return array
+
+
+#inverting a binary tree
+# 1 Iterattive solution 
+# time O(n) | space O(n)
+
+def invertBinaryTree (tree):
+	queue = [tree]
+	while len(queue):
+		current = queue.pop(0)
+		if current is None:
+			return
+		swapTreeNodes(tree)
+		queue.append(tree.left)
+		queue.append(tree.right)
+
+def swapTreeNodes(tree):
+	tree.left, tree.right = tree.right, tree.left
+
+
+#recursive way of the same solution
+# time O(n) | Space: o(d) where d = depth hence can also be weiten as log(n)
+
+def invertBinaryTree(tree):
+	if tree is None:
+		return
+	swapTreeNodes(tree)
+	invertBinaryTree(tree.left)
+	invertBinaryTree(tree.right)
+	
+def swapTreeNodes(tree):
+	tree.left, tree.right = tree.right, tree.left
