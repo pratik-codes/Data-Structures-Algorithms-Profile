@@ -1,0 +1,40 @@
+# find the pair of two nums from two arrays which has smallest difference between two array elements 
+# space: O(n(log(n))) O(m(log(m))) | time: O(1) 
+def smallestDifference9arrayone, arraytwo):
+	arrayOne.sort()
+	arraytwo.sort()
+	indexOne = 0
+	indexTwo = 0
+	smallest = float("inf")
+	current = float("inf")
+	smallestPair = []
+	while indexOne < len(arrayOne) and indexTwo < len(arraytwo):
+		firstnum = arrayOne[indexOne]
+		secondnum = arraytwo[indexTwo] 
+		if firstNum < secondNum:
+			current = secondNum - firstnum
+			indexOne += 1
+		elif secondNum < firstnum:
+			current = firstnum - secondNum
+			indexTwo += 1
+		else:
+			return [firstNum, secondNum]
+		if smallest > current:
+			smallest = current
+			smallestPair = [firstnum, secondNum]
+	return smallestPair
+
+#move all occurence of a element in an array to right 
+#Time: O(n) space:1 
+def moveElements(numArray, numToMove):
+	i = 0 
+	j = len(numArray)
+	while i < j:
+		while i < j and numArray[j] == numToMove:
+			j -= 1
+		if numArray[i] == numToMove:
+			numArray[i], numArray[j] = numArray[j], numArray[i]
+		i += 1
+	return numArray
+
+
