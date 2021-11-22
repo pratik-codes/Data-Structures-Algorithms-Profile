@@ -138,4 +138,13 @@ var removeNthFromEnd = function (head, n) {
   return head;
 };
 
-// problem 4 - remove duplicates from a sorted linked list
+// problem 4 - delete node in a linked list when the node is given
+var deleteNode = function (node) {
+  let curr = null;
+
+  for (let i; i < node - 1; i++) {
+    curr = curr.next;
+  }
+
+  curr = curr.next.next;
+};
