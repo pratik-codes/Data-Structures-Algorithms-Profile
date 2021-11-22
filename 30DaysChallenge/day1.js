@@ -212,9 +212,9 @@ const maxSumS3 = (arr) => {
 // problem link - https://leetcode.com/problems/merge-intervals/
 
 const mergeIntervalsP1 = (arr) => {
-  for (let i = 0; i < arr.length - 1; i++) {
-    for (let j = i; j < arr.length - 1; j++) {
-      console.log(arr[j]);
+  for (let i in arr) {
+    for (let j = i; j <= arr.Length; j++) {
+      console.log("new element", j);
     }
   }
 };
@@ -225,4 +225,5 @@ arrP5 = [
   [8, 10],
   [15, 18],
 ];
+
 console.log(mergeIntervalsP1(arrP5));
